@@ -17,7 +17,7 @@ RecipeModel.reopenClass({
                     recipe: 'rossz',
                 },
                 {
-                    id: 1,
+                    id: 2,
                     name: 'c9',
                     type: 'rossz',
                     base: 'rossz',
@@ -25,6 +25,6 @@ RecipeModel.reopenClass({
                 }
         ]
     
-})
+});
 
 export default RecipeModel;

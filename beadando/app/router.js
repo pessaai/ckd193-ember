@@ -6,6 +6,8 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  
+  this.route('index', {path: '/'});
   this.route('recipes', function() {
     this.route('list');
   });

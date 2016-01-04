@@ -1,4 +1,4 @@
-{{!--{{#each messages}}
+{{#each messages}}
 <div class="alert alert-dismissible alert-success">
     <button type="button" class="close" data-dismiss="alert">×</button>
     {{this}}
@@ -9,7 +9,7 @@
     <h1>Bejelentett hibáim</h1>
 </div>
 
-{{error-list errors=model}}
+{{recipes-list recipes=model}}
 
-<p>{{link-to "Új hiba felvitele" "errors.new" class="btn btn-default"}}</p>
+{{!--<p>{{link-to "Új hiba felvitele" "errors.new" class="btn btn-default"}}</p>--}}
 {{!--<a href="/errors/new" class="btn btn-default">Új hiba felvitele</a>--}}
