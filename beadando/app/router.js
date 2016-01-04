@@ -10,6 +10,9 @@ Router.map(function() {
   this.route('index', {path: '/'});
   this.route('recipes', function() {
     this.route('list');
+    this.route('new');
+    this.route('edit', {path: '/edit/:recipe_id'});
+    this.route('view', {path: '/:recipe_id'});
   });
 });
 

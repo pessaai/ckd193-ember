@@ -43,6 +43,16 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+  
+  ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'script-src': "'self'",
+    'font-src': "'self' 'unsafe-eval' https://fonts.gstatic.com",
+    'connect-src': "'self' 'unsafe-eval' https://ckd193-restapi-pessaai.c9users.io",
+    'img-src': "'self'",
+    'style-src': "'self' 'unsafe-eval' https://fonts.googleapis.com",
+    'media-src': "'self'"
+  };
 
   return ENV;
 };
