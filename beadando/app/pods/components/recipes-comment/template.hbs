@@ -1,6 +1,6 @@
-{{#each comment}}
-    <li href="#" class="list-group-item">
-        <h4 class="list-group-item-heading">{{user}} <small>{{date}}</small></h4>
+{{#each model.comments}}
+    <li class="list-group-item">
+        <h4 class="list-group-item-heading">{{user}} <small></small></h4>
         <p class="list-group-item-text">{{text}}</p>
     </li>
 {{/each}}

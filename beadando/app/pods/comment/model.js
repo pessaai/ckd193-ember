@@ -1,10 +1,9 @@
 import DS from 'ember-data';
 
 const CommentModel =  DS.Model.extend({
-  date: DS.attr('string'),
   text: DS.attr('string'),
   user: DS.attr('string'),
-  recipe: DS.attr('integer')
+  author: DS.belongsTo('recipe')
 });
 
 CommentModel.reopenClass({

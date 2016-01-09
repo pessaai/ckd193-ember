@@ -4,8 +4,6 @@ export default Ember.Controller.extend({
     actions: {
         newRecipe(formData) {
             console.log(formData);
-            // formData.status = 'new';
-            // formData.date = Date.now().toLocaleString();
             var recipe = this.store.createRecord(
                 'recipe', 
                 Object.assign(

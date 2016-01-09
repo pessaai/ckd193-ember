@@ -4,7 +4,8 @@ const RecipeModel =  DS.Model.extend({
   name: DS.attr('string'),
   type: DS.attr('string'),
   base: DS.attr('string'),
-  recipe: DS.attr('string')
+  recipe: DS.attr('string'),
+  posts: DS.hasMany('comment')
 });
 
 RecipeModel.reopenClass({
