@@ -7,8 +7,16 @@ Készítette: Peknyó Szilvia
 #####1.1.	Célkitűzés, projektindító dokumentum
 
 ######Funkcionális követelmények:
+* új ital felvételére a listába
+* a meglévő italok megtekintése
+* a meglévő italok szerkesztésére
+* a meglévő italok törlésére
+* komment írása
 
 ######Nem funkcionális követelmények:
+*	**Használhatóság:** Könnyű áttekinthetőség, ésszerű elrendezés, könnyen kezelhetőség
+*	**Megbízhatóság:** Hibásan bevitt adatok esetén a program jól láthatóan jelezzen a felhasználónak, és emelje ki a hibás beviteli mezőket. A jól bevitt adatok maradjanak az űrlapban.
+*	**Karbantarthatóság:** könnyen lehessen bővíteni, a különböző típusú fájlok külön csoportosítva, ésszerűen legyenek felbontva, a könnyebb fejleszthetőség miatt
 
 #####1.2.	Szakterületi fogalomjegyzék
 **Fajták:**
@@ -18,7 +26,31 @@ Készítette: Peknyó Szilvia
 * **Aperitif:** Étkezések előtt, étvágy fokozás céljából fogyasztott ital.
 
 **Alap ital:** A koktélban legnagyobb arányban részt vevő tömény alkohol.
+
+**Long-os pohár:** Nagy méretű koktélos pohár, amely egy vizespohárhoz hasonlít.
+
 #####1.3.	Használatieset-modell, funkcionális követelmények
+
+**Felhasználók**:
+
+*	Új recept felvétele
+*	Meglévő recept megtekintése
+*	Meglévő recept szerkesztése
+*	Meglévő recept törlése
+*	Komment írása
+
+![](docs/images/teljes-esetdiagram.png)
+
+Vegyünk példának egy egyszerű folyamatot:
+
+**Meglévő recept szerkesztése:**
+
+1.	A felhasználó az oldalra érkezve megtekintheti a recepteket listázó oldalt, ahol kiválaszthatja a szerkeszteni kívánt receptet.
+2.	Megnyomja a „Szerkesztés” feliratú gombot
+3.	Szerkesztés oldalon felviszi az új adatokat
+4.	Submit gombra kattintva elmenti a változásokat
+
+![](docs/images/foly-leiro-esetdiagram.png)
 
 ###2.	Tervezés
 
@@ -28,7 +60,18 @@ Készítette: Peknyó Szilvia
 
 ######2.1.2. Oldaltérkép:
 
+**Felhasználó:**
+* Főoldal
+* Új koktél felvétele
+* Listaoldal
+  * Koktél törlése 
+  * Koktél megtekintése
+    * Komment hozzáfűzése
+  * Koktél szerkesztése 
+
 ######2.1.3. Végpontok
+
+
 
 #####2.2. Felhasználói-felület modell
 
