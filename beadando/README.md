@@ -34,30 +34,39 @@ Készítette: Peknyó Szilvia
 
 ######2.2.1.Oldalvázlatok:
 **Főoldal**
+
 ![](images/kepernyokep/index_terv.jpg)
 
 **Koktél listaoldal**
+
 ![](images/kepernyokep/list_terv.jpg)
 
 **Új koktél felvétele**
+
 ![](images/kepernyokep/new_terv.jpg)
 
 **Koktél megtekintése**
+
 ![](images/kepernyokep/megtekint_terv.jpg)
 
 ######2.2.2.Designtervek (végső megvalósítás kinézete):
 
 **Főoldal**
+
 ![](images/kepernyokep/index.jpg)
 
 **Koktél listaoldal**
+
 ![](images/kepernyokep/list.jpg)
 
 **Új koktél felvétele**
+
 ![](images/kepernyokep/new.jpg)
 
 **Koktél megtekintése**
+
 ![](images/kepernyokep/megtekint.jpg)
+
 ######2.2.3. Osztálymodell
 ######2.2.4.  Dinamikus működés
 ###3.	Implementáció
