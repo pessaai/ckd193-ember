@@ -4,12 +4,11 @@ export default Ember.Controller.extend({
     actions: {
         newComment(formData) {
             console.log(formData);
-            let recipe = this.get('model');
+            let recipe = this.get('model.recipes');
             var comment = this.store.createRecord(
                 'comment', 
                 Object.assign(
                     {
-                        //date: Date.now().toLocaleString(),
                         user: 'Anonymous',
                         author : recipe
                     }, 
@@ -17,7 +16,7 @@ export default Ember.Controller.extend({
                 )
             );
             comment.save();
-            this.transitionToRoute('recipes.view');
+            this.transitionToRoute('recipes.view', this.get('model'));
         }
     }
 });

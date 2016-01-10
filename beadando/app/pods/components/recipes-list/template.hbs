@@ -13,9 +13,9 @@
         {{#each recipes}}
         <tr>
             <td>{{name}}</td>
-            <td><span class="label label-{{typeClass}}">{{type}}</span></td>
+            <td><span class="label label-danger">{{type}}</span></td>
             <td>{{base}}</td>
-            <td><span class="badge">{{numberOfMessages}}</span> {{recipe}}</td>
+            <td><span class="badge"></span> {{recipe}}</td>
             <td>{{link-to "Megtekint" "recipes.view" this class="btn btn-default btn-sm"}}</td>
             <td>{{link-to "Szerkeszt" "recipes.edit" this class="btn btn-default btn-sm"}}
             <button {{action "deleteRecipe" this}} class="btn btn-default btn-sm">Töröl</button></td>
