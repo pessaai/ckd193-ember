@@ -59,6 +59,8 @@ Vegyünk példának egy egyszerű folyamatot:
 
 ######2.1.1. Komponensdiagram
 
+![](images/komponens.png)
+
 ######2.1.2. Oldaltérkép:
 
 **Felhasználó:**
@@ -71,6 +73,13 @@ Vegyünk példának egy egyszerű folyamatot:
   * Koktél szerkesztése 
 
 ######2.1.3. Végpontok
+
+
+**RestAPI végpontok:**
+* GET /recipe: Összes adat lekérdezése a recipe modellből
+* POST /recipe: Új elem felvétele a recipe modellbe 
+* GET /comment: Összes adat lekérdezése a comment modellből
+* POST /comment: Új elem felvétele a comment modellbe 
 
 
 
@@ -143,12 +152,137 @@ Webes IDE: **Cloud9**
 * Végezetül a Github oldalán leellenőrizhetjük a munkánkat.
 
 ######3.1.2. Könyvtárstruktúra, funkciók
+
+* **Beadando**
+  * **app**
+    * **pods**
+      * **application**: adapter
+        * _adapter.js_ 
+      * **comment**: komment modell
+        * _model.js_
+      * **components**: komponensek,
+        * **recipes-comment** 
+          * _component.js_
+          * _template.hbs_
+        * **recipes-edit** 
+          * _component.js_
+          * _template.hbs_
+        * **recipes-list** 
+          * _component.js_
+          * _template.hbs_
+        * **recipes-new** 
+          * _component.js_
+          * _template.hbs_
+        * **recipes-newcomment** 
+          * _component.js_
+          * _template.hbs_
+      * **index**: főoldal
+        * _template.hbs_
+      * **recipe**: recept modell
+        * _model.js_
+      * **recipes**: recept route-ok, és controllerek
+        * **edit**
+          * _controller.js_
+          * _route.js_
+          * _template.hbs_
+        * **list**
+          * _controller.js_
+          * _route.js_
+          * _template.hbs_
+        * **new**
+          * _controller.js_
+          * _route.js_
+          * _template.hbs_
+        * **view**
+          * _controller.js_
+          * _route.js_
+          * _template.hbs_
+  * **templates**
+    * **components**
+      * _application.hbs_
+  * _router.js_: Router.map
+
 ###4.	Tesztelés
 #####4.1. Tesztelési környezetek
 
-#####4.2. Egységteszt
-#####4.3. Funkciónális teszetelés
-#####4.4.Tesztesetek
+A RestAPI server végpontjait a _Advanced REST Client_ végponttesztelő alkalmazással teszteljük, Chrome böngésző környezetben.
+
+#####4.2. Tesztesetek
+
+######4.2.1 Összes elem lekérdezése GET metódussal
+**Küldött kérés:**
+```
+https://ckd193-restapi-pessaai.c9users.io/recipes
+```
+**Metódus:** GET
+
+**Kapott válasz:**
+```
+Status
+200 OK  Loading time: 378
+```
+
+######4.2.2 Konkrét elem lekérdezése GET metódussal
+
+**Küldött kérés:**
+```
+https://ckd193-restapi-pessaai.c9users.io/recipes/J4GUuKXwTk4Qvtz0CiwO
+```
+**Metódus:** GET
+
+**Kapott válasz:**
+```
+Status
+200 OK  Loading time: 378
+```
+######4.2.3 Új elem létrehozása POST metódussal
+
+**Küldött kérés:**
+```
+https://ckd193-restapi-pessaai.c9users.io/recipes
+```
+**Metódus:** POST
+
+**Kérés törzse:**
+```
+{
+    "data": {
+	"type": "recipe",
+        "attributes": {
+		"name": "proba koktel",
+		"type": "long drink",
+		"base": "rum",
+		"recipe": "narancsle"
+        },
+        "relationships": {
+            "posts": {
+                "data": { "type": "comments", "id": "J8WypEA/UNJVxqdAE/oL" }
+            }
+        }
+    }
+}
+```
+
+**Kapott válasz:**
+```
+Status
+201 Created  Loading time: 233
+```
+######4.2.3 Elem törlése a DELETE metódussal
+
+**Küldött kérés:**
+```
+https://ckd193-restapi-pessaai.c9users.io/recipes/vwN70MEPsSdGbmF45WAt
+```
+**Metódus:** DELETE
+
+**Kapott válasz:**
+```
+Status
+204 No Content  Loading time: 74
+```
+
+
 ###5.	Felhasználói dokumentáció
 
 **Futtatáshoz szükséges operációs rendszer:** Tetszőleges operációs rendszer
@@ -160,16 +294,17 @@ Webes IDE: **Cloud9**
 **Program használata:**
 
 1. Böngészőben nyissuk meg a főoldalt
-2. Jobb felső sarokban kattintsunk a Bejelentkezés feliratra
-3. Bejelentkezés/Regisztráció után a Lista oldalra jutunk
+2. Kattintsunk a koktélok megtekintése gombra
+3. A Lista oldalra jutunk
 4. Bal alsó sarokban az Új recept felvitele gombra kattintva tudunk új recepteket felvenni a listába
 5. Töltsük ki az űrlapot
 6. Hibás adatok esetén az űrlap jelezni fogja a hibát
 7. Submit gombra kattintva mentsük el az adatokat
 8. Lista oldalon: Törlés gombra kattintva törölhetjük a receptet
 9. Lista oldalon: Megtekint gombra kattintva a megtekintés oldalra jutunk
-10. Megtekintés oldalon található a szerkesztés gomb, és a komment írása funkció
-11. Szerkesztés oldal: megegyezik az új recept felvitel funkcióval, csak előre láthatóak benne a recept eddigi adatai
+10. Lista oldalon: Szerkesztés gombra kattintva a szerkesztés oldalra jutunk
+11. Szerkesztés oldal: megegyezik az új recept felvitel funkcióval, csak előre láthatóak benne a recept eddigi adatai, az új adatok felvitele után a submit gombra kattintva elmenthetjük az adatokat. Utána vissza jutunk a lista oldalra.
+12. Megtekintés oldal: Felül látjuk a recept pontos adatait. Itt van lehetőség komment írásása. Írjuk be a kommentet, és nyomjuk meg a submit gombot. Az új komment megjelenik alul a listában. A vissza gombbal a lista oldalra jutunk.
 
 ###6.	Irodalomjegyzék:
 
