@@ -59,6 +59,8 @@ Vegyünk példának egy egyszerű folyamatot:
 
 ######2.1.1. Komponensdiagram
 
+![](images/komponens.png)
+
 ######2.1.2. Oldaltérkép:
 
 **Felhasználó:**
@@ -74,10 +76,10 @@ Vegyünk példának egy egyszerű folyamatot:
 
 
 **RestAPI végpontok:**
-*GET /recipe: Összes adat lekérdezése a recipe modellből
-*POST /recipe: Új elem felvétele a recipe modellbe 
-*GET /comment: Összes adat lekérdezése a comment modellből
-*POST /comment: Új elem felvétele a comment modellbe 
+* GET /recipe: Összes adat lekérdezése a recipe modellből
+* POST /recipe: Új elem felvétele a recipe modellbe 
+* GET /comment: Összes adat lekérdezése a comment modellből
+* POST /comment: Új elem felvétele a comment modellbe 
 
 
 
