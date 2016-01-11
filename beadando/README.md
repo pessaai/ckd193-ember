@@ -5,6 +5,7 @@ Készítette: Peknyó Szilvia
 ###1.	Követelményanalízis
 
 #####1.1.	Célkitűzés, projektindító dokumentum
+A program legfőbb célja jól átláthatóan, és érthetően megjeleníteni az adott koktélok, és italok főbb tulajdonságait, és receptjüket egy webes vastagkliens, azaz egyoldali alkalmazás felhasználásával. A felhasználó a koktélok listáját megtekintheti, bővítheti, meglévő elemeket törölhet, valamint megjegyzéseket írhat.
 
 ######Funkcionális követelmények:
 * új ital felvételére a listába
@@ -39,7 +40,7 @@ Készítette: Peknyó Szilvia
 *	Meglévő recept törlése
 *	Komment írása
 
-![](docs/images/teljes-esetdiagram.png)
+![](images/esetdiagram.png)
 
 Vegyünk példának egy egyszerű folyamatot:
 
@@ -50,7 +51,7 @@ Vegyünk példának egy egyszerű folyamatot:
 3.	Szerkesztés oldalon felviszi az új adatokat
 4.	Submit gombra kattintva elmenti a változásokat
 
-![](docs/images/foly-leiro-esetdiagram.png)
+![](images/foly-leiro-esetdiag.png)
 
 ###2.	Tervezés
 
@@ -111,7 +112,23 @@ Vegyünk példának egy egyszerű folyamatot:
 ![](images/kepernyokep/megtekint.jpg)
 
 ######2.2.3. Osztálymodell
+
+ **Adatmodell**
+ 
+ ![](images/adatmodell.png)
+ 
+ **Adatbázisterv**
+ 
+ ![](images/adatbazisterv.png)
+ 
 ######2.2.4.  Dinamikus működés
+
+ **Szekvenciadiagram**
+ 
+ Vegyük példának egy új elem felvételét, mindezt szekvenciadiagrammon.
+ 
+ ![](images/szekvencia.jpg)
+
 ###3.	Implementáció
 ######3.1.1. Fejlesztőkörnyezet
 
