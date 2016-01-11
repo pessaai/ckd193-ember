@@ -150,6 +150,56 @@ Webes IDE: **Cloud9**
 * Végezetül a Github oldalán leellenőrizhetjük a munkánkat.
 
 ######3.1.2. Könyvtárstruktúra, funkciók
+
+* **Beadando**
+  * **app**
+    * **pods**
+      * **application**: adapter
+        * _adapter.js_ 
+      * **comment**: komment modell
+        * _model.js_
+      * **components**: komponensek,
+        * **recipes-comment** 
+          * _component.js_
+          * _template.hbs_
+        * **recipes-edit** 
+          * _component.js_
+          * _template.hbs_
+        * **recipes-list** 
+          * _component.js_
+          * _template.hbs_
+        * **recipes-new** 
+          * _component.js_
+          * _template.hbs_
+        * **recipes-newcomment** 
+          * _component.js_
+          * _template.hbs_
+      * **index**: főoldal
+        * _template.hbs_
+      * **recipe**: recept modell
+        * _model.js_
+      * **recipes**: recept route-ok, és controllerek
+        * **edit**
+          * _controller.js_
+          * _route.js_
+          * _template.hbs_
+        * **list**
+          * _controller.js_
+          * _route.js_
+          * _template.hbs_
+        * **new**
+          * _controller.js_
+          * _route.js_
+          * _template.hbs_
+        * **view**
+          * _controller.js_
+          * _route.js_
+          * _template.hbs_
+  * **templates**
+    * **components**
+      * _application.hbs_
+  * _router.js_: Router.map
+
 ###4.	Tesztelés
 #####4.1. Tesztelési környezetek
 
@@ -230,7 +280,6 @@ Status
 204 No Content  Loading time: 74
 ```
 
-######4.2.4 Funkciónális teszetelés
 
 ###5.	Felhasználói dokumentáció
 
